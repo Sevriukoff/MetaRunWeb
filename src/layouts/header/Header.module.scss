@@ -1,0 +1,7 @@
+.active{
+  background-color: #61dafb;
+
+  @media (min-width: 767px) {
+    background-color: #282c34;
+  }
+}
