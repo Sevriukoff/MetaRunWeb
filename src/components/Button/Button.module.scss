@@ -1,0 +1,45 @@
+.btn{
+  appearance: none;
+  background-color: #979CFB;
+  border: 0;
+  border-radius: 5px;
+  padding: 6px 15px;
+  color: #FFF;
+  min-width: 100px;
+  font: inherit;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+  background-color: #6169FF;
+  cursor: pointer;
+}
+
+.btn:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px #cbd6ee;
+}
+
+.btn[disabled]{
+  color: gray;
+  cursor: not-allowed;
+}
+
+.buttonIcon{
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 15px;
+  width: 15px;
+}
+
+.btn_outlined{
+  background-color: #FFF;
+  border: 1px solid #979CFB;
+  color: #979CFB;
+}
+
+.btn_outlined:hover{
+  background: #E8E9FE;
+}
