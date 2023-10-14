@@ -1,12 +1,23 @@
 import React from 'react';
-import './App.css';
-import Header from "./layouts/header/Header";
+import {RootRoute, Router, RouterProvider} from "@tanstack/react-router";
+import MainLayout from "./layouts/mainLayout/MainLayout";
+import Home from "./pages/Home";
+
+const rootRoute = new RootRoute({
+    component: () =>
+    (
+    <MainLayout>
+        <Home/>
+    </MainLayout>
+    ),
+})
+
+const routeTree = rootRoute.addChildren([])
+const router = new Router({ routeTree })
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <RouterProvider router={router}/>
   );
 }
 

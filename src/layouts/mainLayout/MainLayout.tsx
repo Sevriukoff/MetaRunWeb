@@ -1,13 +1,20 @@
-import React, {ReactElement} from 'react';
+import React, {FC, ReactNode} from 'react';
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import styles from './MainLayout.module.scss'
 
-const MainLayout = ({ children } : {children : ReactElement}) => {
+interface MainLayoutProps {
+    children: ReactNode;
+}
+
+const MainLayout : FC<MainLayoutProps> = ({ children } : { children: ReactNode }) => {
     return (
         <>
             <Header/>
-            {children}
-            <Footer/>
+            <div className={styles.wrapper}>
+                {children}
+                <Footer/>
+            </div>
         </>
     );
 };
