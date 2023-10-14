@@ -1,12 +1,23 @@
 import React from 'react';
-import styles from './Home.module.css'
+import styles from './Home.module.scss'
+import RunCard from "../components/RunCard/RunCard";
 
 const Home = () => {
-    console.log(styles)
-
     return (
         <div>
-
+            Home page
+            <div className={styles.main}>
+                <RunCard/>
+                <RunCard/>
+                <RunCard/>
+                <RunCard/>
+                <RunCard/>
+                <RunCard/>
+                <RunCard/>
+                <RunCard/>
+                <RunCard/>
+                <RunCard/>
+            </div>
         </div>
     );
 };

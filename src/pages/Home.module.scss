@@ -1,0 +1,19 @@
+.active{
+    background-color: #61dafb;
+}
+
+.main{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media screen and (max-width: 1400px) {
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        place-items: center;
+    }
+
+    @media screen and (max-width: 768px){
+        grid-template-columns: 1fr;
+    }
+}
