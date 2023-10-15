@@ -8,10 +8,15 @@ import Button from "../../components/Button/Button";
 const Header : FC = () => {
     return (
         <header className={styles.header}>
-            <img src={logoImg} alt={'logo'}/>
+            <img className={styles.header__logo} src={logoImg} alt={'logo'}/>
             <div>
-                <Button className={styles.header__btn} icon={downloadImg} >Download</Button>
-                <Button icon={steamImg} isOutlined={true}>Login</Button>
+                <Button className={styles.header__btn} icon={downloadImg} onClick={() => console.log('clicked')} >
+                    <span>Download mod</span>
+                </Button>
+
+                <Button className={styles.header__btn_outline} icon={steamImg} isOutlined={true}>
+                    <span>Login via steam</span>
+                </Button>
             </div>
         </header>
     );

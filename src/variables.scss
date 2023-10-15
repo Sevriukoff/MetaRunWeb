@@ -1,0 +1,22 @@
+//-------------------COMPONENTS COLOR-------------------//
+$primary-color_light: #FFF;
+$primary-color_dark: #FFF; //TODO
+
+$accent-color_light: #979CFB;
+$accent-color_dark: #FFF; //TODO
+
+$background-color_light: #F8F9FA;
+$background-color_dark: #FFF; //TODO
+
+//----------------------TEXT COLOR----------------------//
+$primary-text-color_light: #E3E3E3;
+$accent-text-color_light: $accent-color_light;
+$accent-second-text-color_light: #909090;
+$gray-text-color_light: #B9B9B9;
+$background-text-color_light: #F8F9FA;
+$tertiary-text-color_light: #F1F1F1;
+
+//------------------SCREEN BREAKPOINTS------------------//
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;
+$desktop-breakpoint: 1440px;
