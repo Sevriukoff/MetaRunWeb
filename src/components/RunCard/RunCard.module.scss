@@ -1,16 +1,17 @@
+@import '../../variables';
+
 .card{
   display: grid;
-  grid-template-columns: 76% 24%;
+  grid-template-columns: minmax(100px, 76%) minmax(95px, 24%);
   grid-template-rows: auto auto auto;
-  gap: 1px 1px;
+  gap: 15px;
   grid-template-areas:
     "h st"
-    "b ."
+    "b st"
     "f sd";
 
-  max-width: 450px;
+  max-width: 550px;
   padding: 15px;
-
   border: 3px solid #29274F;
   border-radius: 15px;
 
@@ -19,21 +20,34 @@
   background-repeat: no-repeat;
   box-shadow: 0px 3px 5px 2px rgba(54, 54, 54, 0.21);
   transition: box-shadow 0.5s ease-in-out, border 0.3s ease-in;
-}
 
-.card:hover{
-  cursor: pointer;
-  border: 3px solid #454872;
-  box-shadow: 0px 0px 6px 4px rgba(41, 39, 79, 0.5);
+  &:hover{
+    cursor: pointer;
+    border: 3px solid #454872;
+    box-shadow: 0px 0px 6px 4px rgba(41, 39, 79, 0.5);
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 10px;
+
+    grid-template-columns: minmax(136px, 7.25fr) minmax(72px, 2fr) 18px;
+
+    grid-template-areas:
+      "st sd f"
+      "h h f"
+      "b b f";
+
+    gap: 10px;
+  }
 }
 
 .card:hover .card__title{
-  color: #979CFB;
+  color: #8a8db7;
 }
 
 .card__header{
   display: flex;
-  margin-bottom: 15px;
+  //margin-bottom: 15px;
   grid-area: h;
 }
 
@@ -45,27 +59,37 @@
   min-height: 42px;
 
   margin-right: 15px;
+
+  @media (max-width: $mobile-breakpoint) {
+    width: 42px;
+    height: 42px;
+
+    margin-right: 10px;
+  }
 }
 
 .card__title{
-  color: #FFF;
+  color: $primary-text-color_light;
+  flex-wrap: nowrap;
+  text-wrap: none;
   transition: color 0.3s ease-in;
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: $mobile-breakpoint) {
     font-size: 16px;
   }
 }
 
 .card__type{
-  color: #FFF;
+  color: $primary-text-color_light;
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: $mobile-breakpoint) {
     font-size: 16px;
   }
 }
 
 .card__body{
   display: flex;
+  flex-wrap: wrap;
   gap: 9px;
 
   grid-area: b;
@@ -80,14 +104,27 @@
 
   box-shadow: 0px 0px 3px 2px rgba(144, 142, 39, 0.21);
   border-radius: 5px; border: 0.50px #908E27 solid;
+  transition: box-shadow 0.3s ease;
+
+  &:hover{
+    box-shadow: 0px 0px 3px 5px rgba(144, 142, 39, 0.21);
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .card__footer{
   display: flex;
   gap: 6px;
-  margin-top: 15px;
 
   grid-area: f;
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+  }
 }
 
 .card__artifact{
@@ -96,6 +133,11 @@
 
   min-width: 18px;
   min-height: 18px;
+
+  @media (max-width: $mobile-breakpoint) {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .card__statistics_top{
@@ -103,32 +145,36 @@
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.09);
 
-  color: #FFF;
+  color: $primary-text-color_light;
   font-size: 10px;
 
   grid-area: st;
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: $mobile-breakpoint) {
+      display: flex;
+      justify-content: space-between;
+      padding: 2px 5px;
       font-size: 8px;
   }
 }
 
 .card__statistics_timer_container{
   display: flex;
+  justify-content: space-between;
 }
 
 .card__statistics_timer_container p:nth-child(1){
   font-size: 20px;
   letter-spacing: 1.4px;
   
-  @media screen and (max-width: 768px){
+  @media (max-width: $mobile-breakpoint){
     font-size: 16px;
   }
 }
 
 .card__statistics_timer_container p:nth-child(2){
   font-size: 9px;
-  color: #B9B9B9;
+  color: $gray-text-color_light;
   margin-top: 3.5px;
 
   @media screen and (max-width: 768px) {
@@ -137,7 +183,7 @@
 }
 
 .card__statistics_container p:nth-child(1){
-  color: #B9B9B9;
+  color: $gray-text-color_light;
 }
 
 .card__statistics_container{
@@ -151,8 +197,23 @@
   padding: 5px 10px;
   display: flex;
   gap: 9px;
-  margin-top: 15px;
 
   grid-area: sd;
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 3px 6px;
+  }
 }
 
+.card__statistics_dlc{
+  max-width: 21px;
+  max-height: 21px;
+
+  min-width: 16px;
+  min-height: 16px;
+
+  @media (max-width: $mobile-breakpoint) {
+    width: 16px;
+    height: 16px;
+  }
+}

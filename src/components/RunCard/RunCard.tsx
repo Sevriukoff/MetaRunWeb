@@ -32,19 +32,21 @@ const RunCard = () => {
                     <p>54:21</p>
                     <p>:98</p>
                 </div>
-                <div className={styles.card__statistics_container}>
-                    <p>Stage</p>
-                    <p>6</p>
-                </div>
-                <div className={styles.card__statistics_container}>
-                    <p>Level</p>
-                    <p>23</p>
+                <div>
+                    <div className={styles.card__statistics_container}>
+                        <p>Stage</p>
+                        <p>6</p>
+                    </div>
+                    <div className={styles.card__statistics_container}>
+                        <p>Level</p>
+                        <p>23</p>
+                    </div>
                 </div>
             </div>
 
             <div className={styles.card__statistics_bottom}>
-                <img src={voidDlcImg} alt={'dlc'}/>
-                <img src={voidDlcImg} alt={'dlc'}/>
+                <img className={styles.card__statistics_dlc} src={voidDlcImg} alt={'dlc'}/>
+                <img className={styles.card__statistics_dlc} src={voidDlcImg} alt={'dlc'}/>
             </div>
 
             <div className={styles.card__footer}>
