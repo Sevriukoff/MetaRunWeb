@@ -1,0 +1,45 @@
+@import '../../../variables';
+
+.check{
+  padding-left: 1.8em;
+  display: block;
+}
+
+.check__input{
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+
+  &:checked + .check__box{
+    background-color: $accent-color_light;
+    background-image: url('../../../resources/check.svg');
+  }
+
+  &:focus + .check__box{
+    box-shadow: 0 0 0 0.15em $accent-color_light,
+                0 0 0 0.3em #93caef;
+  }
+
+  &:disabled + .check__box{
+    box-shadow: 0 0 0 0.15em $gray-text-color_light;
+  }
+
+  &:disabled:checked + .check__box{
+    background-color: $gray-text-color_light;
+  }
+}
+
+.check__box{
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  overflow: hidden;
+  background-color: $primary-color_light;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  border-radius: 0.15em;
+  box-shadow: 0 0 0 0.15em $accent-text-color_light;
+  margin-top: 0.05em;
+  margin-left: -1.8em;
+}
